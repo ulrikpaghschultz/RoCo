@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/dk.sdu.mmmi.modular.roco/src-gen"
+    editDirectory="/dk.sdu.mmmi.modular.roco.edit/src" editorDirectory="/dk.sdu.mmmi.modular.roco.editor/src"
+    modelPluginID="dk.sdu.mmmi.modular.roco" forceOverwrite="true" modelName="RobustCollaboration"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="dk.sdu.mmmi.modular.roco.edit"
+    editorPluginID="dk.sdu.mmmi.modular.roco.editor">
+  <genPackages prefix="RobustCollaboration" basePackage="dk.sdu.mmmi.modular" disposableProviderFactory="true"
+      ecorePackage="RobustCollaboration.ecore#/">
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Program/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//ProgramElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//ProgramElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//ExternalName"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//ScopeDefiningElement"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//LocalType"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//TypeDef"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//EnumDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//EnumDef/names"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Ensemble">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Ensemble/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Role/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Role/extendsRole"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Role/withinEnsemble"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Role/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Member"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Field/shared"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Field/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Field/initial"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Require">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Require/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Behavior">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Behavior/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Behavior/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Behavior/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Behavior/body"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Parameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Method">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Method/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Method/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Method/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Method/body"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Expr"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//LocalVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//LocalVariable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//QualifiedName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//QualifiedName/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//QualifiedName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//BinaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//BinaryExpr/lhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//BinaryExpr/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//BinaryExpr/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//FunctionCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//FunctionCall/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//FunctionCall/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Statement"/>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Conditional">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Conditional/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Conditional/thenBranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Conditional/elseBranch"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Operation/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Operation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Operation/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//SelfOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//SelfOperation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//SelfOperation/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Assignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Assignment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Assignment/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Value/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Value/extern"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//Update">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Update/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Update/sourceQualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//Update/sourceName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//Update/body"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//ConstantDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//ConstantDefinition/abstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//ConstantDefinition/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//ConstantDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="RobustCollaboration.ecore#//ConstantAssignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RobustCollaboration.ecore#//ConstantAssignment/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RobustCollaboration.ecore#//ConstantAssignment/rhs"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
