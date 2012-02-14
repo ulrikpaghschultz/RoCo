@@ -14,6 +14,9 @@ import javax.inject.Inject
 import dk.sdu.mmmi.modular.robustCollaboration.Ensemble
 import dk.sdu.mmmi.modular.robustCollaboration.Role
 import org.eclipse.emf.ecore.EObject
+import dk.sdu.mmmi.modular.robustCollaboration.Program
+import org.eclipse.xtext.naming.QualifiedName
+import dk.sdu.mmmi.modular.robustCollaboration.EnumDef
 
 class RobustCollaborationGenerator implements IGenerator {
 	
@@ -21,21 +24,43 @@ class RobustCollaborationGenerator implements IGenerator {
 	
 	Resource resource
 	IFileSystemAccess fsa
+	QualifiedName packageName
 	
-	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		generateForType(typeof(Ensemble),[Ensemble x|x.compileEnsemble])
-		generateForType(typeof(Role),[Role x|x.compileRole])
+	override void doGenerate(Resource _resource, IFileSystemAccess _fsa) {
+		resource = _resource; fsa = _fsa;
+		generateForType("Program",typeof(Program),[Program x|packageName = x.getFullyQualifiedName; x.compileProgram])
+		generateForType(null,typeof(Ensemble),[Ensemble x|x.compileEnsemble])
+		generateForType(null,typeof(Role),[Role x|x.compileRole])
+		generateForType(null,typeof(EnumDef),[EnumDef x|x.compileEnum])
 	}
 
-	def <T extends EObject> void generateForType(Class<T> type, (T)=>CharSequence contents) {
+	def <T extends EObject> void generateForType(String fileName, Class<T> type, (T)=>CharSequence contents) {
 		for(e: resource.getAllContents().toIterable().filter(type)) {
-			fsa.generateFile(e.getFullyQualifiedName.toString.replace(".", "/") + ".java",contents.apply(e))
+			fsa.generateFile(e.getFullyQualifiedName.toString.replace(".", "/") 
+				+ (if(fileName!=null) "/"+fileName else "_RoCo")
+				+ ".java",
+				contents.apply(e)
+			)
 		}
 	}
 	
+	def compileProgram(Program program) '''
+	package «packageName»;
+	public class Program extends GenericRoCoProgram { }
+	'''
+
 	def compileRole(Role role) '''
+	package «packageName»;
+	public class «role.getFullyQualifiedName»_RoCo extends GenericRoCoRole { }
 	'''
 
 	def compileEnsemble(Ensemble ensemble) '''
+	package «packageName»;
+	public class «ensemble.getFullyQualifiedName»_RoCo extends GenericRoCoEnsemble { }
+	'''
+
+	def compileEnum(EnumDef enumd) '''
+	package «packageName»;
+	public class «enumd.getFullyQualifiedName»_RoCo extends GenericRoCoEnum { }
 	'''
 }
