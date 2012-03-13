@@ -1,0 +1,143 @@
+grammar dk.sdu.mmmi.modular.roco2.Roco2 with org.eclipse.xtext.common.Terminals
+
+generate roco2 "http://www.sdu.dk/mmmi/modular/roco2/Roco2"
+
+Program:
+	'package' name=ID ';'
+	externals+=ExternalName*
+	elements+=LocalType*;
+	
+ExternalName:
+	'external' name=ID ';'
+;
+
+LocalType:
+	TypeDef | ScopeDefiningElement
+;
+
+ScopeDefiningElement:
+	EnumDef | Ensemble | Role
+;
+
+TypeDef:
+	'type' name=ID ';'
+;
+
+EnumDef:
+	'enum' name=ID '{' names+=ID (',' names+=ID )* '}';
+
+Ensemble:
+	'ensemble' name=ID ('extends' extendsEnsemble=[Ensemble])? '{' elements+=Member* '}'
+;
+
+Role:
+	(abstract?='abstract')? (mixin?='mixin')? 'role' name=ID ('extends' extendsRole=[Role])? ('within' withinEnsemble=[Ensemble])? '{'
+		elements+=Member*
+	'}'
+;
+
+Member:
+	Field | Require | Behavior | Method | Update | ConstantDefinition | ConstantAssignment
+;
+
+Field:
+	type=[LocalType] name=ID ('=' initial=Expr)? ';'
+;
+
+Require:
+	'require' exp=Expr ';'
+;
+
+Behavior:
+	'behavior' (qualifier = [ScopeDefiningElement] '.')? name = ID '(' (params+=Parameter (',' params+=Parameter)*)? ')' '{' body+=Statement* '}'
+;
+
+Parameter:
+	type=[LocalType] name=ID
+;
+
+Method:
+	type=[LocalType] name=ID '(' (params+=Parameter (',' params+=Parameter)*)? ')' '{' body+=Statement* '}'
+;
+
+Expr:
+	BinaryExpr | Value | FunctionCall | InternalQualifiedName | LocalVariable
+;
+
+LocalVariable: name=ID;
+
+InternalQualifiedName:
+	qualifier = [ScopeDefiningElement] '.' name = ID
+;
+
+BinaryExpr:
+  	'(' lhs = Expr op=BinaryOperator rhs = Expr ')'
+;
+
+BinaryOperator:
+  	'==' | '&&' | '+' | '-' | '*' | '/'
+;
+
+FunctionCall:
+	name=ID '(' (arguments+=Expr (',' arguments+=Expr)*)? ')'
+;
+
+
+Statement:
+	BasicStatement | QualifiedStatement
+;
+
+BasicStatement:
+	Conditional | Operation | Assignment | ForLoop
+;
+
+
+ForLoop:
+	'for' '(' variable=ID ':' qualifier=[ScopeDefiningElement] '.' shared=ID ')' '{' body += Statement* '}'
+;
+
+Conditional:
+	'if' '(' condition=Expr ')' '{' thenBranch+=Statement* '}'
+	('else' '{' elseBranch+=Statement* '}')?
+;
+
+QualifiedStatement:
+	(self?='self' | qualifier=[ScopeDefiningElement]) statement=(OperationActivation | OperationInhibit | ModuleConditional)
+;
+
+OperationActivation:
+	'.' operation=Operation
+;
+
+OperationInhibit:
+	'!' operation=Operation
+;
+
+ModuleConditional:
+	'.' conditional=Conditional
+;
+
+Operation:
+	name=ID '(' (arguments+=Expr (',' arguments+=Expr)*)? ')' ';'
+;
+
+Assignment:
+	name=ID '=' exp=Expr ';'
+;
+
+
+Value:
+	value = INT | '@' extern = [ExternalName | ID]
+;
+
+Update:
+	name=ID '.' 'update' '{' body+=Statement body+=Statement* '}'	
+;
+
+ConstantDefinition:
+	(abstract?='abstract')? 'constant' type=[LocalType] name=ID ';'
+;	
+
+ConstantAssignment:
+	lhs=ID '=' rhs=Expr ';'
+;
