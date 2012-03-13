@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/dk.sdu.mmmi.modular.roco2/src-gen"
+    editDirectory="/dk.sdu.mmmi.modular.roco2.edit/src" editorDirectory="/dk.sdu.mmmi.modular.roco2.editor/src"
+    modelPluginID="dk.sdu.mmmi.modular.roco2" forceOverwrite="true" modelName="Roco2"
+    updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="dk.sdu.mmmi.modular.roco2.edit"
+    editorPluginID="dk.sdu.mmmi.modular.roco2.editor">
+  <genPackages prefix="Roco2" basePackage="dk.sdu.mmmi.modular.roco2" disposableProviderFactory="true"
+      ecorePackage="Roco2.ecore#/">
+    <genClasses ecoreClass="Roco2.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Program/externals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Program/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//ExternalName">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//ExternalName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//LocalType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//LocalType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//ScopeDefiningElement"/>
+    <genClasses ecoreClass="Roco2.ecore#//TypeDef"/>
+    <genClasses ecoreClass="Roco2.ecore#//EnumDef">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//EnumDef/names"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Ensemble">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Ensemble/extendsEnsemble"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Ensemble/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Role/abstract"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Role/mixin"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Role/extendsRole"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Role/withinEnsemble"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Role/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Member"/>
+    <genClasses ecoreClass="Roco2.ecore#//Field">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Field/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Field/initial"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Require">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Require/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Behavior">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Behavior/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Behavior/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Behavior/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Behavior/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Parameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Parameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Method">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Method/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Method/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Method/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Method/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Expr"/>
+    <genClasses ecoreClass="Roco2.ecore#//LocalVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//LocalVariable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//InternalQualifiedName">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//InternalQualifiedName/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//InternalQualifiedName/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//BinaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//BinaryExpr/lhs"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//BinaryExpr/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//BinaryExpr/rhs"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//FunctionCall">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//FunctionCall/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//FunctionCall/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Statement"/>
+    <genClasses ecoreClass="Roco2.ecore#//BasicStatement"/>
+    <genClasses ecoreClass="Roco2.ecore#//ForLoop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//ForLoop/variable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//ForLoop/qualifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//ForLoop/shared"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//ForLoop/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Conditional">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Conditional/condition"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Conditional/thenBranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Conditional/elseBranch"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//QualifiedStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//QualifiedStatement/self"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//QualifiedStatement/qualifier"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//QualifiedStatement/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//OperationActivation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//OperationActivation/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//OperationInhibit">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//OperationInhibit/operation"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//ModuleConditional">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//ModuleConditional/conditional"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Operation/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Operation/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Assignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Assignment/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Assignment/exp"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Value/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//Value/extern"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//Update">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//Update/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//Update/body"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//ConstantDefinition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//ConstantDefinition/abstract"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Roco2.ecore#//ConstantDefinition/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//ConstantDefinition/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Roco2.ecore#//ConstantAssignment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Roco2.ecore#//ConstantAssignment/lhs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Roco2.ecore#//ConstantAssignment/rhs"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
